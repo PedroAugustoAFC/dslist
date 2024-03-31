@@ -20,6 +20,7 @@ public class GameDTO {
     public GameDTO(){
     }
 
+    @SuppressWarnings("null")
     public GameDTO(Game entity) {
         BeanUtils.copyProperties(entity, this);
     }

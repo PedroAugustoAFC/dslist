@@ -22,6 +22,7 @@ public class GameService {
 
     @Transactional(readOnly = true)
     public GameDTO findById(Long id){
+        @SuppressWarnings("null")
         Game result = gameRepository.findById(id).get();
         return new GameDTO(result);
     }
