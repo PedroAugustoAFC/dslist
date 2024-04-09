@@ -22,6 +22,13 @@ public class GameListService {
 
     @Autowired
     private GameRepository gameRepository;
+
+    @Transactional(readOnly = true)
+    public GameListDTO findById(Long id){
+        @SuppressWarnings("null")
+        GameList result = gameListRepository.findById(id).get();
+        return new GameListDTO(result);
+    }
     
     @Transactional(readOnly = true)
     public List<GameListDTO> findAll() {
